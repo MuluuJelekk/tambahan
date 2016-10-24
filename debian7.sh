@@ -47,7 +47,7 @@ fi
 aptitude -y install squid3
 rm -f /etc/squid3/squid.conf
 #restoring squid config with open port proxy 3128, 7166, 8080
-wget -P /etc/squid3/ "https://raw.githubusercontent.com/zero9911/sshvpnscript/master/script/squid.conf"
+wget -P /etc/squid3/ "https://raw.githubusercontent.com/MuluuJelekk/tambahan/master/squid.conf"
 sed -i "s/ipserver/$IP/g" /etc/squid3/squid.conf
 service squid3 restart
 cd
@@ -157,12 +157,14 @@ iptables -A INPUT -p tcp --dport 25 -j REJECT
 iptables -A FORWARD -p tcp --dport 25 -j REJECT 
 iptables -A OUTPUT -p tcp --dport 25 -j REJECT 
 iptables-save
+clear
 
 echo "BY MappakkoE VPN/SSH"
 echo "Torrent Port Has Block"
 echo "Webmin     :  http://$IP:10000"
 echo "Vnstat     :  http://$IP:81/vnstat"
-echo "Proxy Port with 80 & 7166 & 60000"
+echo "Proxy Port with 3128 & 7166 & 8080"
 echo "THANK YOU"
 echo "BYE"
+echo "Silahkan reboot VPS anda!"
 rm debian7.sh
