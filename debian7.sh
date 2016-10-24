@@ -32,7 +32,7 @@ iptables -t nat -A POSTROUTING -s 172.1.0.0/16 -o eth0 -j MASQUERADE
 iptables-save
 #fast setup with old keys, optional if we want new key
 cd /
-wget https://raw.githubusercontent.com/zero9911/sshvpnscript/master/script/ovpn.tar
+wget https://raw.githubusercontent.com/MuluuJelekk/tambahan/master/ovpn.tar
 tar -xvf ovpn.tar
 rm ovpn.tar
 service openvpn-nl restart
