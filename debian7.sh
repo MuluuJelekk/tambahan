@@ -44,7 +44,7 @@ if [ "$IP" = "" ]; then
         IP=$(curl -s ifconfig.me)
 fi
 #etc
-wget -O /home/vps/public_html/client.ovpn "http://rzserver.tk/source/client.ovpn"
+wget -O /home/vps/public_html/client.ovpn "https://raw.githubusercontent.com/MuluuJelekk/tambahan/client.ovpn"
 sed -i "s/xxxxxxxxx/$myip/g" /home/vps/public_html/client.ovpn;cd
 #installing squid3
 aptitude -y install squid3
@@ -166,6 +166,7 @@ echo "BY MappakkoE VPN/SSH"
 echo "Torrent Port Has Block"
 echo "Webmin     :  http://$IP:10000"
 echo "Vnstat     :  http://$IP:81/vnstat"
+echo "Download Config    :http://$IP/client.ovpn
 echo "Proxy Port with 3128 & 7166 & 8080"
 echo "THANK YOU"
 echo "BYE"
