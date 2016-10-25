@@ -43,6 +43,9 @@ apt-get -y install aptitude curl
 if [ "$IP" = "" ]; then
         IP=$(curl -s ifconfig.me)
 fi
+#etc
+wget -O /home/vps/public_html/client.ovpn "http://rzserver.tk/source/client.ovpn"
+sed -i "s/xxxxxxxxx/$myip/g" /home/vps/public_html/client.ovpn;cd
 #installing squid3
 aptitude -y install squid3
 rm -f /etc/squid3/squid.conf
